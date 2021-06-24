@@ -21,7 +21,6 @@ import java.util.List;
 public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<Article> articleArrayList;
-//    private Context context;
     private OnRecyclerViewitemClicklistener OnRecyclerViewitemClicklistener;
     public MainAdapter(List<Article> articleArrayList) {
         this.articleArrayList = articleArrayList;
@@ -61,7 +60,6 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         private TextView txt_title;
         private TextView txt_name;
         private TextView txt_date;
-//        private ImageView img_pic;
         private LinearLayout linearlayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,7 +67,6 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             txt_title = itemView.findViewById(R.id.txt_title);
             txt_name = itemView.findViewById(R.id.txt_name);
             txt_date = itemView.findViewById(R.id.txt_date);
-//            img_pic = itemView.findViewById(R.id.img_pic);
             linearlayout = itemView.findViewById(R.id.linearlayout);
 
             linearlayout.setOnClickListener(new View.OnClickListener() {

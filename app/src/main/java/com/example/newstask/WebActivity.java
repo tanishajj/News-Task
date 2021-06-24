@@ -14,8 +14,8 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        final String url = getIntent().getStringExtra("url");
         webview = findViewById(R.id.webview);
+        final String url = getIntent().getStringExtra("url");
         webview.loadUrl(url);
     }
 }

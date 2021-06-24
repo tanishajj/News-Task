@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
     public void onItemClick(int adapterPosition, View v) {
         switch (v.getId()) {
             case R.id.linearlayout:
+
                 Article article = (Article) v.getTag();
                 if(!TextUtils.isEmpty(article.getUrl())) {
-
                     Intent webActivity = new Intent(this,WebActivity.class);
                     webActivity.putExtra("url",article.getUrl());
                     startActivity(webActivity);
