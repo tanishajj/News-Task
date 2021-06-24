@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp"
-    android:layout_margin="3dp"
+    android:layout_margin="5dp"
     android:background="@drawable/input_bg"
     android:id="@+id/linearlayout">
 
@@ -16,7 +16,7 @@
         android:gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="5dp"
@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -34,7 +34,7 @@
                 android:id="@+id/txt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/purple_500"
                 android:textSize="14dp"
                 android:text="Null"
                 android:layout_marginTop="10dp"/>
@@ -43,23 +43,10 @@
                 android:id="@+id/txt_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="14dp"
+                android:layout_marginTop="5dp"
                 android:text="Null"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/img_pic"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:gravity="center_vertical"/>
 
         </LinearLayout>
 
