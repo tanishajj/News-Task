@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
     @Override
     public void onItemClick(int adapterPosition, View v) {
         switch (v.getId()) {
-            case R.id.linearlayout:
+            case R.id.txt_link:
 
                 Article article = (Article) v.getTag();
                 if(!TextUtils.isEmpty(article.getUrl())) {
@@ -73,6 +73,27 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
                     startActivity(webActivity);
                 }
                 break;
+
+            case R.id.linearlayout:
+
+                Article article1 = (Article) v.getTag();
+                if(!TextUtils.isEmpty(article1.getTitle())) {
+                    Intent intent = new Intent(this,DetailsActivity.class);
+                    intent.putExtra("title",article1.getTitle());
+                    intent.putExtra("description",article1.getDescription());
+                    intent.putExtra("author",article1.getAuthor());
+                    intent.putExtra("web",article1.getUrl());
+                    intent.putExtra("time",article1.getPublishedAt());
+                    intent.putExtra("image",article1.getTitle());
+                    startActivity(intent);
+                }
+                break;
         }
+    }
+
+    @Override
+    public void onItemClicks(int adapterPosition, View v) {
+
+
     }
 }

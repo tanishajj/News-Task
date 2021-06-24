@@ -46,8 +46,13 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         if(!TextUtils.isEmpty(articleModel.getPublishedAt())) {
             holder.txt_date.setText(articleModel.getPublishedAt());
         }
+        if(!TextUtils.isEmpty(articleModel.getUrl())) {
+            holder.txt_link.setText(articleModel.getUrl());
+        }
 
+        holder.txt_link.setTag(articleModel);
         holder.linearlayout.setTag(articleModel);
+
 
     }
 
@@ -60,6 +65,7 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         private TextView txt_title;
         private TextView txt_name;
         private TextView txt_date;
+        private TextView txt_link;
         private LinearLayout linearlayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,11 +73,21 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             txt_title = itemView.findViewById(R.id.txt_title);
             txt_name = itemView.findViewById(R.id.txt_name);
             txt_date = itemView.findViewById(R.id.txt_date);
+            txt_link = itemView.findViewById(R.id.txt_link);
             linearlayout = itemView.findViewById(R.id.linearlayout);
 
+            txt_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (OnRecyclerViewitemClicklistener != null) {
+                        OnRecyclerViewitemClicklistener.onItemClick(getAdapterPosition(), v);
+                    }
+                }
+            });
             linearlayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     if (OnRecyclerViewitemClicklistener != null) {
                         OnRecyclerViewitemClicklistener.onItemClick(getAdapterPosition(), v);
                     }
