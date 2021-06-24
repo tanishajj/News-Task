@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -49,7 +48,6 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         if(!TextUtils.isEmpty(articleModel.getUrl())) {
             holder.txt_link.setText(articleModel.getUrl());
         }
-
         holder.txt_link.setTag(articleModel);
         holder.linearlayout.setTag(articleModel);
 

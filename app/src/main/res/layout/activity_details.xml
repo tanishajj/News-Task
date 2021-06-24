@@ -10,15 +10,8 @@
     android:layout_margin="5dp"
     android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp" />
-
     <TextView
-        android:id="@+id/txt_title"
+        android:id="@+id/txt_title1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -26,7 +19,7 @@
         android:layout_marginTop="15dp"/>
 
     <TextView
-        android:id="@+id/txt_aut"
+        android:id="@+id/txt_aut1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/red"
@@ -34,7 +27,7 @@
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/txt_link"
+        android:id="@+id/txt_link1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/purple_200"
@@ -42,7 +35,7 @@
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/txt_time"
+        android:id="@+id/txt_time1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/cardview_dark_background"
@@ -50,12 +43,11 @@
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/txt_dec"
+        android:id="@+id/txt_dec1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="14dp"
         android:layout_marginTop="10dp"/>
-
 
 </LinearLayout>

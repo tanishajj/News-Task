@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
 
     private static final String API_KEY = "9a0c8e375ada4198a26f7a52638c4b78";
     RecyclerView main_recyclerview;
-    private MainAdapter mainAdapter;
     ApiInterface UsersApiInterface;
 
     @Override
@@ -46,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 if(response.body().getStatus().equals("ok")) {
                     List<Article> articleList = response.body().getArticles();
-                    final MainAdapter mainArticleAdapter = new MainAdapter(articleList);
-                    mainArticleAdapter.setOnRecyclerViewItemClickListener(MainActivity.this);
-                    main_recyclerview.setAdapter(mainArticleAdapter);
+                    final MainAdapter mainAdapter = new MainAdapter(articleList);
+                    mainAdapter.setOnRecyclerViewItemClickListener(MainActivity.this);
+                    main_recyclerview.setAdapter(mainAdapter);
 
                 }
             }
@@ -84,16 +83,10 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
                     intent.putExtra("author",article1.getAuthor());
                     intent.putExtra("web",article1.getUrl());
                     intent.putExtra("time",article1.getPublishedAt());
-                    intent.putExtra("image",article1.getTitle());
                     startActivity(intent);
                 }
                 break;
         }
     }
 
-    @Override
-    public void onItemClicks(int adapterPosition, View v) {
-
-
-    }
 }
