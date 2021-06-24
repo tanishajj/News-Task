@@ -21,7 +21,7 @@ import java.util.List;
 public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<Article> articleArrayList;
-    private Context context;
+//    private Context context;
     private OnRecyclerViewitemClicklistener OnRecyclerViewitemClicklistener;
     public MainAdapter(List<Article> articleArrayList) {
         this.articleArrayList = articleArrayList;
