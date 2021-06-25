@@ -5,12 +5,16 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.newstask.MainActivity;
 import com.example.newstask.R;
 import com.example.newstask.model.Article;
 import com.example.newstask.utils.OnRecyclerViewitemClicklistener;
@@ -20,9 +24,12 @@ import java.util.List;
 public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<Article> articleArrayList;
+
     private OnRecyclerViewitemClicklistener OnRecyclerViewitemClicklistener;
+
     public MainAdapter(List<Article> articleArrayList) {
         this.articleArrayList = articleArrayList;
+
     }
 
     @NonNull
@@ -48,6 +55,8 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         if(!TextUtils.isEmpty(articleModel.getUrl())) {
             holder.txt_link.setText(articleModel.getUrl());
         }
+        String imgurl = articleModel.getUrlToImage();
+        Glide.with(holder.itemView).load(imgurl).into(holder.img_new);
         holder.txt_link.setTag(articleModel);
         holder.linearlayout.setTag(articleModel);
 
@@ -64,6 +73,7 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         private TextView txt_name;
         private TextView txt_date;
         private TextView txt_link;
+        ImageView img_new;
         private LinearLayout linearlayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +82,7 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             txt_name = itemView.findViewById(R.id.txt_name);
             txt_date = itemView.findViewById(R.id.txt_date);
             txt_link = itemView.findViewById(R.id.txt_link);
+            img_new = itemView.findViewById(R.id.img_new);
             linearlayout = itemView.findViewById(R.id.linearlayout);
 
             txt_link.setOnClickListener(new View.OnClickListener() {

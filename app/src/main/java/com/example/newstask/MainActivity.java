@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewite
                     intent.putExtra("author",article1.getAuthor());
                     intent.putExtra("web",article1.getUrl());
                     intent.putExtra("time",article1.getPublishedAt());
+                    intent.putExtra("image",article1.getUrlToImage());
                     startActivity(intent);
                 }
                 break;
