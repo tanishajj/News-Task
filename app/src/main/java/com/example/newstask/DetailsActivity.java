@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.newstask.model.Article;
 
 public class DetailsActivity extends AppCompatActivity {
     TextView txt_title1, txt_dec1, txt_aut1, txt_link1, txt_time1;
@@ -49,6 +51,14 @@ public class DetailsActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),ImageActivity.class);
                 intent.putExtra("image",img);
                 startActivity(intent);
+            }
+        });
+        txt_link1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent webView = new Intent(getApplicationContext(),WebActivity.class);
+                    webView.putExtra("url",link);
+                    startActivity(webView);
             }
         });
     }
